@@ -1,20 +1,12 @@
 <template>
   <div>
-    <div class="header-wrapper">
-      <div class="logo">
-        <img  src="../assets/logo.png" width="80" height="26">
-      </div>
-      <x-input class="search"   placeholder="美国签证">
-        <i class="iconfont" slot="label" style="padding-right:10px;display:block;">&#xe651;</i>
-      </x-input>
-      <div class="icongroup"><i class="iconfont">&#xe63f;</i><i class="iconfont">&#xe659;</i></div>
-    </div>
+    <y-header :colorTheme="colorTheme"></y-header>
     <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper"  :show-dots="false" :show-desc-mask="false"></swiper>
     <card >
       <div slot="content" class="card-demo-flex card-demo-content01">
         <grid class="topic-wrapper">
-          <grid-item label="专业签证">
-            <i slot="icon" class="iconfont">&#xe654;</i>
+          <grid-item label="专业签证" link="/category">
+            <i slot="icon" class="iconfont" >&#xe654;</i>
           </grid-item>
           <grid-item label="极致之旅">
             <i slot="icon" class="iconfont">&#xe645;</i>
@@ -59,7 +51,8 @@
 </template>
 
 <script>
-import {Grid, GridItem, Group, Cell, Checklist, Card, XDialog, XButton, XHeader, XInput, Swiper, SwiperItem, Search} from 'vux';
+import {Grid, GridItem, Group, Cell, Checklist, Card, XDialog, XButton, XHeader, XInput, Swiper, SwiperItem, Search, Badge} from 'vux';
+import YHeader from 'components/header/header';
 import { Config } from 'common/js/config';
 // const ERR_OK = 0;
 const baseList = [{
@@ -89,7 +82,9 @@ export default {
     Grid,
     GridItem,
     SwiperItem,
-    Search
+    Search,
+    Badge,
+    YHeader
   },
   methods: {
     showDialog () {
@@ -97,13 +92,16 @@ export default {
       console.log(Config());
     }
   },
+  mounted () {
+    console.log('mounted');
+  },
   data () {
     return {
       // note: changing this line won't causes changes
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello World!',
+      colorTheme: 'home-theme',
       commonList: [ 'China', 'Japan', 'America' ],
       checklist002: [],
       show: false,
@@ -157,7 +155,7 @@ export default {
     }
   }
   .icongroup {
-    flex: 0 0 84px;
+    flex: 0 0 94px;
     text-align: center;
     .iconfont {
       display: inline-block;
@@ -167,9 +165,6 @@ export default {
         padding-left:0
       }
     }
-  }
-  .search {
-
   }
 }
 .swiper-wrapper {
@@ -191,6 +186,7 @@ export default {
   }
   .iconfont{
     font-size:26px;
+    line-height: 40px;
     color:#fff;
   }
 }

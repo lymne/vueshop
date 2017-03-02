@@ -4,8 +4,7 @@ import Vue from 'vue';
 import FastClick from 'fastclick';
 import VueRouter from 'vue-router';
 import App from './App';
-import Home from 'components/HelloFromVux';
-import Demo from 'components/demo/demo';
+import Home from 'components/Home';
 import { AjaxPlugin } from 'vux';
 
 Vue.use(AjaxPlugin);
@@ -19,7 +18,15 @@ const routes = [
   },
   {
     path: '/demo',
-    component: Demo
+    component: function (resolve) {
+      require(['components/demo/demo.vue'], resolve);
+    }
+  },
+  {
+    path: '/category',
+    component: function (resolve) {
+      require(['components/category/category.vue'], resolve);// 异步加载组件
+    }
   }
 ];
 
