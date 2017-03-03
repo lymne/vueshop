@@ -1,6 +1,6 @@
 <template>
   <div>
-    <y-header :colorTheme="colorTheme"></y-header>
+    <y-header :colorTheme="colorTheme" :showLogo="true"></y-header>
     <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper"  :show-dots="false" :show-desc-mask="false"></swiper>
     <card >
       <div slot="content" class="card-demo-flex card-demo-content01">
