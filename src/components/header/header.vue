@@ -14,7 +14,7 @@
       <i class="iconfont" slot="label" style="padding-right:10px;display:block;">&#xe651;</i>
     </x-input>
     <div class="icongroup-right">
-      <badge :text="cartcount" v-show="cartcount"></badge>
+      <badge :text="cartcount" v-show="cartcount" :class="colorTheme"></badge>
       <i class="iconfont">&#xe63f;</i>
       <i class="iconfont">&#xe659;</i></div>
   </div>
@@ -38,7 +38,7 @@
     },
     data () {
       return {
-        cartcount: 0
+        cartcount: 2
       };
     },
     components: {
@@ -49,6 +49,8 @@
 <style lang="less" >
   @import '../../common/css/variable.less';
   .header-wrapper {
+    position: relative;
+    top: 0;
     display: flex;
     width: 100%;
     height: 50px;
@@ -109,8 +111,12 @@
       text-align: center;
       .vux-badge {
         position: absolute;
-        right: 45px;
-        top: 5px;
+        right: 50px;
+        top: 10px;
+        &.normal-theme{
+          background-color:@header-normal-input-color;
+          color:@color-pink;
+        }
       }
     }
   }

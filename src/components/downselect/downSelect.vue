@@ -37,6 +37,7 @@
         this.currentChildIndex = 0; // 默认重置为第一个选项
       },
       selectItem (parentIndex, childrenIndex) {
+        this.dropdown = false;
         this.currentChildIndex = childrenIndex;
         console.log(parentIndex, childrenIndex);
         console.log(this.selectList[parentIndex].content[childrenIndex]);

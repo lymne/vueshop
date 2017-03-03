@@ -1,52 +1,55 @@
 <template>
   <div>
     <y-header :colorTheme="colorTheme" :showLogo="true"></y-header>
-    <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper"  :show-dots="false" :show-desc-mask="false"></swiper>
-    <card >
-      <div slot="content" class="card-demo-flex card-demo-content01">
-        <grid class="topic-wrapper">
-          <grid-item label="专业签证" link="/category">
-            <i slot="icon" class="iconfont" >&#xe654;</i>
-          </grid-item>
-          <grid-item label="极致之旅">
-            <i slot="icon" class="iconfont">&#xe645;</i>
-          </grid-item>
-          <grid-item label="悠美专线">
-            <i slot="icon" class="iconfont">&#xe655;</i>
-          </grid-item>
-          <grid-item label="热门专题">
-            <i slot="icon" class="iconfont">&#xe654;</i>
-          </grid-item>
-          <grid-item label="每日秒杀">
-            <i slot="icon" class="iconfont">&#xe645;</i>
-          </grid-item>
-          <grid-item label="必备礼物">
-            <i slot="icon" class="iconfont">&#xe655;</i>
-          </grid-item>
-        </grid>
-      </div>
-    </card>
-    <card class="trip-wrapper">
-      <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
-      <div slot="content" class="card-padding">
-        <h1 style="color:#333333;">美国关岛5天3晚</h1>
-        <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
-      </div>
-    </card>
-    <card class="trip-wrapper">
-      <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
-      <div slot="content" class="card-padding">
-        <h1 style="color:#333333;">美国关岛5天3晚</h1>
-        <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
-      </div>
-    </card>
-    <card class="trip-wrapper">
-      <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
-      <div slot="content" class="card-padding">
-        <h1 style="color:#333333;">美国关岛5天3晚</h1>
-        <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
-      </div>
-    </card>
+    <div class="outter-wrapper">
+      <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper"  :show-dots="false" :show-desc-mask="false"></swiper>
+      <card >
+        <div slot="content" class="card-demo-flex card-demo-content01">
+          <grid class="topic-wrapper">
+            <grid-item label="专业签证" link="/category/">
+              <i slot="icon" class="iconfont" >&#xe654;</i>
+            </grid-item>
+            <grid-item label="极致之旅">
+              <i slot="icon" class="iconfont">&#xe645;</i>
+            </grid-item>
+            <grid-item label="悠美专线">
+              <i slot="icon" class="iconfont">&#xe655;</i>
+            </grid-item>
+            <grid-item label="热门专题">
+              <i slot="icon" class="iconfont">&#xe654;</i>
+            </grid-item>
+            <grid-item label="每日秒杀">
+              <i slot="icon" class="iconfont">&#xe645;</i>
+            </grid-item>
+            <grid-item label="必备礼物">
+              <i slot="icon" class="iconfont">&#xe655;</i>
+            </grid-item>
+          </grid>
+        </div>
+      </card>
+      <card class="trip-wrapper">
+        <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
+        <div slot="content" class="card-padding">
+          <h1 style="color:#333333;">美国关岛5天3晚</h1>
+          <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
+        </div>
+      </card>
+      <card class="trip-wrapper">
+        <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
+        <div slot="content" class="card-padding">
+          <h1 style="color:#333333;">美国关岛5天3晚</h1>
+          <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
+        </div>
+      </card>
+      <card class="trip-wrapper">
+        <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
+        <div slot="content" class="card-padding">
+          <h1 style="color:#333333;">美国关岛5天3晚</h1>
+          <p style="font-size:14px;line-height:1.2;">香港出发 含机票酒店</p>
+        </div>
+      </card>
+    </div>
+
   </div>
 </template>
 
@@ -192,6 +195,7 @@ export default {
 }
 .trip-wrapper {
   font-size: 0;
+  margin-bottom: 10px;
   img{
     width: 90%;
     padding: 12px 17px 0;
