@@ -12,4 +12,5 @@ export default {
 
 <style lang="less">
 @import '/common/css/index.less';
+@import '/common/css/1px.less';
 </style>
