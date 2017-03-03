@@ -5,7 +5,7 @@
     </div>
 
       <div class="icongroup-left" v-show="showIconLeft">
-        <router-link to="/demo">
+        <router-link to="/">
          <i class="iconfont">&#xe64f;</i>
         </router-link>
       </div>
@@ -26,13 +26,19 @@
       colorTheme: {
         type: String,
         default: 'home-theme'
+      },
+      showLogo: {
+        type: Boolean,
+        default: false
+      },
+      showIconLeft: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
       return {
-        cartcount: 0,
-        showLogo: false,
-        showIconLeft: true
+        cartcount: 0
       };
     },
     components: {
