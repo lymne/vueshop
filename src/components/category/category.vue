@@ -80,8 +80,6 @@
   .outter-wrapper{
     position: absolute;
     top:50px;
-    overflow:hidden;
-    display:flex;
   }
   .trip-wrapper {
     font-size: 0;
