@@ -2,7 +2,7 @@
   <div>
     <y-header :colorTheme="colorTheme" :showLogo="true"></y-header>
     <div class="outter-wrapper">
-      <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper"  :show-dots="false" :show-desc-mask="false"></swiper>
+      <swiper  :value="0"  :aspect-ratio="240/400"  :list="baseList" class="swiper-wrapper" :show-desc-mask="false"></swiper>
       <card >
         <div slot="content" class="card-demo-flex card-demo-content01">
           <grid class="topic-wrapper">

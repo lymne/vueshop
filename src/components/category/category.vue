@@ -1,22 +1,23 @@
 <template>
   <div>
     <y-header :colorTheme="colorTheme" :showIconLeft="true"></y-header>
-    <div class="outter-wrapper" >
-      <downselect></downselect>
-      <div class="trip-wrapper" v-for="trip in trips" @click="selectProduct (trip)">
-        <card >
-          <img slot="header" src="http://placeholder.qiniudn.com/640x300" >
-          <div slot="content" class="card-padding">
-            <h1>{{trip.name}}</h1>
-            <div class="content">
-              <span class="small">¥</span> <span class="stress">{{trip.price}}</span> 起
+    <div class="outter-wrapper" ref="outwrapper">
+      <div>
+        <downselect></downselect>
+        <div class="trip-wrapper" v-for="trip in trips" @click="selectProduct (trip)">
+          <card >
+            <img slot="header" v-bind:src="trip.thumbimge" >
+            <div slot="content" class="card-padding">
+              <h1>{{trip.name}}</h1>
+              <div class="content">
+                <span class="small">¥</span> <span class="stress">{{trip.price}}</span> 起
+              </div>
+              <p>{{trip.desc}}</p>
+              <span class="item" v-for="item in trip.items">{{item}}</span>
             </div>
-            <p>{{trip.desc}}</p>
-            <span class="item" v-for="item in trip.items">{{item}}</span>
-          </div>
-        </card>
+          </card>
+        </div>
       </div>
-
     </div>
     <product :product="selectedProduct" ref="product"></product>
     <backtop></backtop>
@@ -25,10 +26,10 @@
 <script type="text/ecmascript-6">
   import YHeader from 'components/header/header';
   import downselect from 'components/downselect/downselect';
+
   import product from 'components/product/product';
   import backtop from 'components/backtop/backtop';
   import {Card} from 'vux';
-
   export default {
     components: {
       YHeader,
@@ -49,29 +50,39 @@
         name: '美国关岛5天3晚',
         price: '488',
         desc: '港出发 含机票酒店',
-        items: ['出签率98%', '好玩22']
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x300'
       }, {
         name: '美国关岛5天3晚',
         price: '388',
         desc: '港出发 含机票酒店',
-        items: ['出签率98%', '好玩22']
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x300'
       }, {
         name: '美国关岛5天3晚',
         price: '28',
         desc: '香港出发 含机票酒店',
-        items: ['出签率98%', '好玩22']
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x300'
       }];
     },
     methods: {
       selectProduct (product) {
+        this.selectedProduct = product;
         this.$refs.product.show();
-        console.log(product);
+        console.log(this.selectedProduct);
       }
     }
   };
 </script>
 <style lang="less" >
   @import '../../common/css/variable.less';
+  .outter-wrapper{
+    position: absolute;
+    top:50px;
+    overflow:hidden;
+    display:flex;
+  }
   .trip-wrapper {
     font-size: 0;
     z-index: -1;

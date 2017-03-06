@@ -49,11 +49,12 @@
 <style lang="less" >
   @import '../../common/css/variable.less';
   .header-wrapper {
-    position: relative;
+    position: fixed;
     top: 0;
     display: flex;
     width: 100%;
     height: 50px;
+    z-index:99;
     &.home-theme{
       background-color:@header-home-background-color;
       color:@header-home-text-color;

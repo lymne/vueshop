@@ -10,7 +10,7 @@
     </div>
     <transition name="fade">
       <ul class="droplist" v-show="dropdown">
-        <li  :class="{'current':currentChildIndex===index}"  v-for="(item, index) in selectList[currentIndex].content" @click="selectItem(currentIndex, index)">{{item.value}}</li>
+        <li class="list-item"  :class="{'current':currentChildIndex===index}"  v-for="(item, index) in selectList[currentIndex].content" @click="selectItem(currentIndex, index)">{{item.value}}</li>
       </ul>
     </transition>
   </div>
@@ -66,7 +66,10 @@
        opacity: 0;
      }
      .droplist {
-        li{
+       z-index: 1;
+       position: absolute;
+       width: 100%;
+        .list-item {
           background: #fff;
           padding: 18px 24px;
           margin-bottom: 2px;
