@@ -6,7 +6,7 @@
         <downselect></downselect>
         <div class="trip-wrapper" v-for="trip in trips" @click="selectProduct (trip)">
           <card >
-            <img slot="header" v-bind:src="trip.thumbimge" >
+            <img slot="header" v-lazy="trip.thumbimge">
             <div slot="content" class="card-padding">
               <h1>{{trip.name}}</h1>
               <div class="content">
@@ -47,23 +47,47 @@
     },
     created () {
       this.trips = [{
+        pid: '1',
         name: '美国关岛5天3晚',
         price: '488',
         desc: '港出发 含机票酒店',
         items: ['出签率98%', '好玩22'],
-        thumbimge: 'http://placeholder.qiniudn.com/640x300'
+        thumbimge: 'http://placeholder.qiniudn.com/640x100'
       }, {
+        pid: '2',
         name: '美国关岛5天3晚',
         price: '388',
         desc: '港出发 含机票酒店',
         items: ['出签率98%', '好玩22'],
-        thumbimge: 'http://placeholder.qiniudn.com/640x300'
+        thumbimge: 'http://placeholder.qiniudn.com/640x200'
       }, {
+        pid: '3',
         name: '美国关岛5天3晚',
         price: '28',
         desc: '香港出发 含机票酒店',
         items: ['出签率98%', '好玩22'],
         thumbimge: 'http://placeholder.qiniudn.com/640x300'
+      }, {
+        pid: '3',
+        name: '美国关岛5天3晚',
+        price: '28',
+        desc: '香港出发 含机票酒店',
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x400'
+      }, {
+        pid: '3',
+        name: '美国关岛5天3晚',
+        price: '28',
+        desc: '香港出发 含机票酒店',
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x500'
+      }, {
+        pid: '3',
+        name: '美国关岛5天3晚',
+        price: '28',
+        desc: '香港出发 含机票酒店',
+        items: ['出签率98%', '好玩22'],
+        thumbimge: 'http://placeholder.qiniudn.com/640x600'
       }];
     },
     methods: {

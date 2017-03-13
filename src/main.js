@@ -7,13 +7,14 @@ import VueRouter from 'vue-router';
 import App from './App';
 import Home from 'components/Home';
 import { AjaxPlugin } from 'vux';
-
+import VueLazyload from 'vue-lazyload';
 Vue.use(AjaxPlugin);
 
 Vue.use(VueRouter);
 
 Vue.use(Vuex);
 
+Vue.use(VueLazyload);
 const store = new Vuex.Store({}); // 这里你可能已经有其他 module
 
 store.registerModule('vux', { // 名字自己定义

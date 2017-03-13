@@ -14,4 +14,9 @@ body {
 .weui-grid__icon {
   text-align: center;
 }
-
+img[lazy=loading] {
+  opacity: 0;
+}
+img[lazy=loaded] {
+  transition: opacity .25s ease-in-out
+}
