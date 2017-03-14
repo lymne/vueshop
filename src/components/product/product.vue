@@ -69,7 +69,7 @@
         console.log('content');
         console.log(this.content);
         this.showFlag = true;
-        this.content = ' <div class="mui-custommodule-item"> <img class="lazyImg img-ks-lazyload" alt="" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg_620x10000Q30.jpg_.webp"> </div>';
+        this.content = ' <div class="mui-custommodule-item"><img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg">  <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> </div>';
         this.$nextTick(() => {
           this.$refs.scroller.reset({
             top: 0
@@ -135,7 +135,9 @@
     }
     .desc{
       width: 100%;
-      margin-top:15px;
+      height: 100%;
+      margin-top: 15px;
+      font-size:0;
       img{
         width:100%;
         height:100%;
