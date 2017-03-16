@@ -15,29 +15,22 @@
             </div>
           </card>
           <div class="board">
-            <i class="iconfont ">&#xe64c;</i>
+            <i class="iconfont">&#xe64c;</i>
             <span class="text">屎丢丢刚下了一单</span>
           </div>
           <div class="desc" v-html="content"></div>
         </div>
       </scroller>
+      <bottombutton></bottombutton>
     </div>
   </transition>
 
 </template>
 <script type="text/ecmascript-6">
   import {Card, Swiper, SwiperItem, Scroller, Marquee, MarqueeItem, Group, Cell} from 'vux';
+  import bottombutton from 'components/bottombtn/bottombtn';
   export default {
-    components: {
-      Card,
-      Swiper,
-      SwiperItem,
-      Scroller,
-      Marquee,
-      MarqueeItem,
-      Group,
-      Cell
-    },
+    name: 'product',
     props: {
       product: {
         type: Object
@@ -50,6 +43,32 @@
         content: ''
       };
     },
+    components: {
+      Card,
+      Swiper,
+      SwiperItem,
+      Scroller,
+      Marquee,
+      MarqueeItem,
+      Group,
+      Cell,
+      bottombutton
+    },
+    methods: {
+      show () {
+        this.showFlag = true;
+        this.content = ' <div class="mui-custommodule-item"><img class="lazyImg img-ks-lazyload" alt="" height="244px" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244px" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244px" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg">  <img class="lazyImg img-ks-lazyload" alt=""height="244px" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> </div>';
+        this.$nextTick(() => {
+          console.log(document.querySelector('.xs-container').clientHeight);
+          this.$refs.scroller.reset({
+            top: 0
+          });
+        });
+      },
+      hide () {
+        this.showFlag = false;
+      }
+    },
     created () {
       // this._config = Config();
       /* this.$http.get(this._config.host + '/api/product/').then((response) => {
@@ -61,24 +80,6 @@
        }
        }); */
       this.imgs = [{url: 'javascript:', img: 'https://dn-placeholder.qbox.me/640x200'}];
-    },
-    beforeUpdate () {
-    },
-    methods: {
-      show () {
-        console.log('content');
-        console.log(this.content);
-        this.showFlag = true;
-        this.content = ' <div class="mui-custommodule-item"><img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg">  <img class="lazyImg img-ks-lazyload" alt="" height="244" src="https://img.alicdn.com/imgextra/i4/2343446020/TB2qP5wlFXXXXb1XXXXXXXXXXXX_!!2343446020.jpg"> </div>';
-        this.$nextTick(() => {
-          this.$refs.scroller.reset({
-            top: 0
-          });
-        });
-      },
-      hide () {
-        this.showFlag = false;
-      }
     }
   };
 </script>
